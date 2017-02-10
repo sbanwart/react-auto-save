@@ -11,11 +11,31 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      name: '',
+      email: '',
+      hasChanges: false
+    }
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
     this.save = this.save.bind(this);
+  }
+
+  handleNameChange(e) {
+    this.setState({ name: e.target.value, hasChanges: true });
+  }
+
+  handleEmailChange(e) {
+    this.setState({ email: e.target.value, hasChanges: true });
   }
 
   save() {
     console.log("Saving data...");
+    if (this.state.hasChanges)
+    {
+      this.setState({ hasChanges: false });
+    }
   }
 
   render() {
@@ -30,13 +50,19 @@ class App extends Component {
             <Form>
               <FormGroup controlId="nameGroup">
                 <ControlLabel>Name:</ControlLabel>
-                <FormControl typeof="text" placeholder="Name" />
+                <FormControl typeof="text"
+                            value={this.state.name}
+                            placeholder="Name"
+                            onChange={this.handleNameChange} />
                 <FormControl.Feedback />
                 <HelpBlock>Enter full name</HelpBlock>
               </FormGroup>
               <FormGroup controlId="emailGroup">
                 <ControlLabel>Email:</ControlLabel>
-                <FormControl typeof="text" placeholder="user@example.com" />
+                <FormControl typeof="text"
+                            value={this.state.email}
+                            placeholder="user@example.com"
+                            onChange={this.handleEmailChange} />
                 <FormControl.Feedback />
                 <HelpBlock>Enter email address</HelpBlock>
               </FormGroup>
