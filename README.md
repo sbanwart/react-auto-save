@@ -1,13 +1,19 @@
 # React Auto-Save
 
-This is a sample project to accompany the blog post at https://scottbanwart.com/blog/react-auto-save.
+This is a sample project to accompany the blog post at https://scottbanwart.com/blog/2017/02/implementing-auto-save-with-react/.
 
 # Installation
 
-Clone the repository
-Run NPM to install the dependencies
+## Clone the repository
+
+$git clone git@github.com:sbanwart/react-auto-save.git
+
+## Run NPM to install the dependencies
+
 $npm install
-Start the application
+
+## Start the application
+
 $npm Start
 
 # Usage
