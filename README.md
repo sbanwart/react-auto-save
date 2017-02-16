@@ -14,7 +14,7 @@ $npm install
 
 ## Start the application
 
-$npm Start
+$npm start
 
 # Usage
 
